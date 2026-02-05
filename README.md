@@ -1,0 +1,2 @@
+# git26AIngSoftTypeScript-
+git26AIngSoftTypeScript
