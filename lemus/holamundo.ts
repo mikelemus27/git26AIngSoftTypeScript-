@@ -27,4 +27,4 @@ let numberTuple : [number, number,number] = [1, 2, 3]
 console.log("numberTuple:", numberTuple)
 let HeteroTuple : [Date, number,string] = [new Date(), 2, "juana"]
 console.log("HeteroTuple:", HeteroTuple)
-console.log("HeteroTuple[0]:", HeteroTuple[0])
+console.log("HeteroTuple[0]:", HeteroTuple[0])ls
