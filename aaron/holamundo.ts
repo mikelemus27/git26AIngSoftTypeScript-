@@ -1,5 +1,4 @@
-console.log( "holamundo")
-//let variableName: typeScriptType = value; 
+console.log("Hola mundo")
 let num: number = 0.444;
 let hex: number = 0xbeef;
 let bin: number = 0b0010;
@@ -15,16 +14,16 @@ let no: boolean = false;
 console.log("yes", yes)
 console.log("no", no)
 
-const arr3: (Date| string[])[] = [new Date(), 
-                                    new Date(), 
+const arr3: (Date| string[])[] = [new Date(),
+                                    new Date(),
                                     ["1", "a"]
                                 ]
 console.log("arr3", arr3)
 console.log("arr3[2]:", arr3[2])
-const arrNum: number[] = [1, 2, 3, 4, 5]
+const arrNum : number[] = [1, 2, 3, 4, 5]
 console.log("arrNum", arrNum)
 let numberTuple : [number, number,number] = [1, 2, 3]
 console.log("numberTuple:", numberTuple)
 let HeteroTuple : [Date, number,string] = [new Date(), 2, "juana"]
 console.log("HeteroTuple:", HeteroTuple)
-console.log("HeteroTuple[0]:", HeteroTuple[0])ls
+console.log("HeteroTupl[0]:", HeteroTuple[0])
