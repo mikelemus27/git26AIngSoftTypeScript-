@@ -6,4 +6,8 @@ describe('Modulo de estadisticas de ventas', () => {
         const ventas = [85];
         expect(ObtenerPromedio(ventas)).toBe(85);
     });
+    test('varias ventas con decimales', () => { //Ventas con decimales.
+        const ventas = [10.5, 20.5, 30.0];
+        expect(ObtenerPromedio(ventas)).toBeCloseTo(20.33, 2);
+    });
 });
