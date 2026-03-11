@@ -1,4 +1,4 @@
-import { aplicarDescuento } from '../calculos';
+import { aplicarDescuento } from './calculos';
 describe('Pruebas de Nómina Tec-Café', () => {
    //prueba1
    test('Debe aplicar 15% de descuento a alumnos de Sistemas',
