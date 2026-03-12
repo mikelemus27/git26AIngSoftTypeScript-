@@ -24,8 +24,12 @@ describe('Modulo de estadisticas de ventas', () => {
         const ventas100mas = new Array(100).fill(10);
         expect(() => ObtenerPromedio(ventas100mas)).toThrow('Lista demasiado larga');
     });
-    test('ventas todas iguales vs diferentes', () => {
-        const ventasIguales = [50];
+    test('Ventas todas iguales.', () => {
+        const ventasIguales = [22,22];
         expect(ObtenerPromedio(ventasIguales)).toBe(ventasIguales[0]);
+    });
+    test('promedio con decimal periódico (10/3)', () => {
+        const ventasPeriodicas: number[] = [5, 5, 12];
+        expect(ObtenerPromedio(ventasPeriodicas)).toBeCloseTo(7.33, 2);
     });
 });
