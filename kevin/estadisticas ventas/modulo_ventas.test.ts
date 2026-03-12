@@ -20,4 +20,8 @@ describe('Modulo de estadisticas de ventas', () => {
         const ventas: number[] = [-1];
         expect(() => ObtenerPromedio(ventas)).toThrow('Venta negativa detectada'); 
     });
+    test('Lista de ventas muy larga (100 elementos).', () => {
+        const ventas100mas = new Array(100).fill(10);
+        expect(() => ObtenerPromedio(ventas100mas)).toThrow('Lista demasiado larga');
+    });
 });
