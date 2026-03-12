@@ -33,7 +33,7 @@ describe('Modulo de estadisticas de ventas', () => {
         expect(ObtenerPromedio(ventasPeriodicas)).toBeCloseTo(7.33, 2);
     });
     test('detección de valores nulos', () => {
-        const ventasConNulo = [10, null, 30] as any;
-        expect(() => ObtenerPromedio(ventasConNulo)).toThrow('La lista contiene valores nulos');
+        const ventasConNulo: (number | null)[] = [null, 20, 30];
+        expect(() => ObtenerPromedio(ventasConNulo as number[])).toThrow('La lista contiene valores nulos');
     });
 });
