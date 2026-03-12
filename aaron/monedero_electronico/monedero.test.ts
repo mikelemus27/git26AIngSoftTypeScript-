@@ -13,7 +13,4 @@ describe("Monedero Electrónico", () => {
     test("Pago mayor al saldo", () => {
         expect(() => realizarPago(50, 100)).toThrow("Saldo Insuficiente");
     });
-
-
-    
     });
