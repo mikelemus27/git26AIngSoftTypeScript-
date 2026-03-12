@@ -9,6 +9,8 @@ describe('Pruebas de Nómina Tec-Café', () => {
 //
   test('Debe lanzar error si el total es negativo', () => {
    expect(() => aplicarDescuento(-1, true)).toThrow("Total negativo");});
-
-
+//prueba no descuento +1000
+  test('no hara descuento si el total es mas de 1000', () => {
+   expect(() => aplicarDescuento(1001, true)).toThrow("mas de 1000 pesos");
+});
 });
