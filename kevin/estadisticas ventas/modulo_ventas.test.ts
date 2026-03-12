@@ -32,8 +32,8 @@ describe('Modulo de estadisticas de ventas', () => {
         const ventasPeriodicas: number[] = [5, 5, 12];
         expect(ObtenerPromedio(ventasPeriodicas)).toBeCloseTo(7.33, 2);
     });
-    test('Ventas representadas en binario/hex dentro del arreglo.', () => {
-    const ventasbinhex: number[] = [0b0101, 0x12, 19]; 
-    expect(ObtenerPromedio(ventasbinhex)).toBe(14);
+    test('detección de valores nulos', () => {
+        const ventasConNulo = [10, null, 30] as any;
+        expect(() => ObtenerPromedio(ventasConNulo)).toThrow('La lista contiene valores nulos');
     });
 });
