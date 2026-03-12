@@ -24,4 +24,8 @@ describe('Modulo de estadisticas de ventas', () => {
         const ventas100mas = new Array(100).fill(10);
         expect(() => ObtenerPromedio(ventas100mas)).toThrow('Lista demasiado larga');
     });
+    test('ventas todas iguales vs diferentes', () => {
+        const ventasIguales = [50];
+        expect(ObtenerPromedio(ventasIguales)).toBe(ventasIguales[0]);
+    });
 });
