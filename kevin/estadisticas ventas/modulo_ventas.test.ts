@@ -16,4 +16,8 @@ describe('Modulo de estadisticas de ventas', () => {
         const ventas: number[] = [0];
         expect(ObtenerPromedio(ventas)).toBe(0);
     });
+    test('Arreglo con números negativos (debe ignorarlos o lanzar error).', () => { 
+        const ventas: number[] = [-1];
+        expect(() => ObtenerPromedio(ventas)).toThrow('Venta negativa detectada'); 
+    });
 });
