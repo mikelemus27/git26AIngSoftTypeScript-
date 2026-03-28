@@ -7,7 +7,6 @@ export interface MonederoProps {
 export class Monedero {
     constructor(private props: MonederoProps) {}
 
-    // Regla de Negocio: No se puede recargar más de $500
     public validarMontoRecarga(monto: number): boolean {
         return monto >= 50 && monto <= 500;
     }
@@ -21,5 +20,8 @@ export class Monedero {
 
     get saldoActual() {
         return this.props.saldo;
+    }
+    getIdAlumno(): string{
+        return this.props.idAlumno
     }
 }
