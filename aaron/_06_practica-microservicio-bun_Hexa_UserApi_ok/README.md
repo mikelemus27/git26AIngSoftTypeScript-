@@ -1,15 +1,13 @@
-# practica-microservicio-bun
+# Microservicio de Usuarios - Bun + PostgreSQL (Arquitectura Hexagonal)
 
-To install dependencies:
+Este proyecto es una API RESTful construida con Bun y TypeScript, utilizando Arquitectura Hexagonal y persistencia de datos en PostgreSQL mediante Docker.
 
-```bash
-bun install
-```
+## Prerrequisitos
+* Tener [Bun](https://bun.sh/) instalado.
+* Tener Docker y Docker Compose instalados.
 
-To run:
+## Instrucciones de Ejecución
 
-```bash
-bun run index.ts
-```
-
-This project was created using `bun init` in bun v1.3.13. [Bun](https://bun.com) is a fast all-in-one JavaScript runtime.
+1. **Levantar la base de datos PostgreSQL:**
+   ```bash
+   docker-compose up -d
