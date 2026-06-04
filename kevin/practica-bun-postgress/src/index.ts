@@ -21,7 +21,7 @@ async function main() {
     "INSERT INTO usuarios(nombre) VALUES($1)",
     ["Pedro"]
 );*/
-
+       
         const result = await client.query(
             "SELECT * FROM usuarios"
         );
@@ -53,11 +53,12 @@ async function main() {
 async function obtenerUsuarios() {
         console.log("muestra de la tabla para mostrar funcionamiento de una funcion utilizable");
         const result2 = await client.query(
-            "SELECT nombre FROM usuarios"
+            "SELECT nombre FROM usuarios where nombre = 'Pedro'"
         );
         console.log(result2.rows);
 }
-obtenerUsuarios();
+obtenerUsuarios();                           
 main();
+
 
 

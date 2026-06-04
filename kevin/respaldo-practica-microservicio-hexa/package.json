@@ -1,5 +1,5 @@
 {
-  "name": "practica-microservicio-bun",
+  "name": "practica-bun-postgress",
   "module": "index.ts",
   "type": "module",
   "private": true,
