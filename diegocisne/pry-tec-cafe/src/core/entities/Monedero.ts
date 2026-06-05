@@ -22,4 +22,8 @@ export class Monedero {
     get saldoActual() {
         return this.props.saldo;
     }
+
+    getIdAlumno(): string {
+        return this.props.idAlumno;
+    }
 }
