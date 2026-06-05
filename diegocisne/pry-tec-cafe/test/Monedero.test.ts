@@ -17,12 +17,12 @@ describe ("pruebas de Nomina Tec-Cafe", () => {
     test("recarga mayor a 500 imposible",
         () => {expect (
                         Objmonedero.validarMontoRecarga(600)
-                        ).toBe(true);} 
+                        ).toBe(false);} 
     )
 
     test('recarga menor a 50 imposible',
         () => { expect (
                         Objmonedero.validarMontoRecarga(40)
-                        ).toBe(true);}
+                        ).toBe(false);}
     )
 })

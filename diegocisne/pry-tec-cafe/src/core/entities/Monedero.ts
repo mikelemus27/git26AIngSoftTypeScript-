@@ -26,4 +26,6 @@ export class Monedero {
     getIdAlumno(): string {
         return this.props.idAlumno;
     }
+
+    
 }

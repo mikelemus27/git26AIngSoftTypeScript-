@@ -1,28 +1,24 @@
-import { Monedero } from "../../entities/Monedero.js";
-import { IMonederoRepository } from "./IMonederoRepository.js";
+import { Monedero, MonederoProps } from "../../entities/Monedero";
 
-//implementación simulada del repositorio
-//usa memoria en lugar de una base de datos real
-
-export class MockMonederoRepository implements IMonederoRepository{
-    private monederos: Map<string, Monedero> = new Map();
-
-    //------------------------------
+export class MockMonederoRepository {
+    private monederos: Map<string, MonederoProps> = new Map();
 
     async buscarPorId(id: string): Promise<Monedero> {
-        const monedero = this.monederos.get(id);
+        const data = this.monederos.get(id);
 
-        if (!monedero){
-            console.log(`No se encontró un monedero para el ID: ${id}`);
+        if (!data) {
             throw new Error(`Monedero no encontrado para el ID: ${id}`);
         }
 
-        return monedero;
+        return new Monedero(data);
     }
-
-    //------------------------------
 
     async guardar(monedero: Monedero): Promise<void> {
-        this.monederos.set(monedero.getIdAlumno(), monedero);
-    }
+    const data = {
+        idAlumno: monedero.getIdAlumno(),
+        saldo: monedero.saldoActual
+    };
+
+    this.monederos.set(data.idAlumno, data);
+}
 }

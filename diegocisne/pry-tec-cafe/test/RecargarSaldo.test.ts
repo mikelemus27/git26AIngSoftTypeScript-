@@ -1,10 +1,11 @@
-import { RecargarSaldoUseCase} from "../src/core/use-cases/RecargarSaldo";
+import { RecargarSaldoUseCase} from "../src/core/use-cases/RecargarSaldoUseCase";
 
 import {MockMonederoRepository} from "../src/core/Infraestructure/Repository/MockMonederoRepository";
 
 import { Monedero, MonederoProps} from "../src/core/entities/Monedero";
 
 describe ("RecargarSaldoUseCase", ()=> {
+    
 
     let mockRepo: MockMonederoRepository;
     let useCase: RecargarSaldoUseCase;
@@ -27,7 +28,7 @@ describe ("RecargarSaldoUseCase", ()=> {
     //--------------------------------
 
     it ("Debería recargar el saldo correctamente", async() => {
-        const nuevoSaldo = await useCase.ejecutar("idAlumno", 200);
+        const nuevoSaldo = await useCase.ejecutar("alumno123", 200);
 
         expect(nuevoSaldo).toBe(300);
     });
@@ -45,7 +46,7 @@ describe ("RecargarSaldoUseCase", ()=> {
         await expect(
             useCase.ejecutar("alumno123",600)
         ).rejects.toThrow(
-            "Monto de recarga Inválido para las reglas del Tec-Café"
+            "Monto de recarga inválido para las reglas del Tec-Café"
         );
     });
 
@@ -54,7 +55,7 @@ describe ("RecargarSaldoUseCase", ()=> {
     it("debería lanzar error si el monedero no existe", async() => {
 
         await expect(
-            useCase.ejecutar("alumnoinexIstente", 100)
+            useCase.ejecutar("alumnoInexistente", 100)
         ).rejects.toThrow(
             "Monedero no encontrado para el ID: alumnoInexistente"
         );
