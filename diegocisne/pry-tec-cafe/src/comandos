@@ -1,0 +1,4 @@
+npm run exec: ejecuta 1 sola vez
+npm run dev: se mantiene ejecutando mientras detecte cambios en codigo
+npm run build: compila y genera los codigos en js que se podrán publicar en la versión final ejecutable
+npm run  start: ejectua la versión dist (final) en javascript del proyecto
