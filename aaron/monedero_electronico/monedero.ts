@@ -21,3 +21,17 @@ export function realizarPago(saldo: number, monto: number): number {
     const nuevoSaldo = saldo - monto;
     return Math.round(nuevoSaldo * 100) / 100;
 }
+export function cargarSaldo(saldo: number, monto: number): number {
+
+    if (monto <= 0) {
+        throw new Error("El monto de recarga debe ser positivo");
+    }
+
+    const nuevoSaldo = saldo + monto;
+
+    if (nuevoSaldo > SALDO_MAXIMO) {
+        throw new Error("Se supera el saldo máximo permitido");
+    }
+
+    return Math.round(nuevoSaldo * 100) / 100;
+}

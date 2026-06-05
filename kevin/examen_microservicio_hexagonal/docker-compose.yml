@@ -1,0 +1,37 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:16-alpine  # Imagen de container postgres
+    restart: always
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin123
+      POSTGRES_DB: escuela     # Puedes dejar 'escuela' o cambiarlo a 'gaming_db' si lo prefieres
+    ports:
+      - "5432:5432"
+    volumes:  # Donde se va a guardar la información de la bd
+      - postgres_data:/var/lib/postgresql/data
+
+  # Servicio para tu aplicación Bun
+  bun_app: 
+    build: .
+    image: practica-microservicio-bun:latest 
+    restart: unless-stopped
+    ports:
+      - "3000:3000" # Expone el puerto 3000
+    environment:
+      DB_HOST: postgres
+      DB_USER: admin
+      DB_PASSWORD: admin123
+      DB_NAME: escuela     # Debe ser el mismo que pusiste arriba en POSTGRES_DB
+      DB_PORT: 5432
+    depends_on:
+      - postgres # Asegura que Postgres inicie primero
+
+    volumes:
+      - .:/app
+      - /app/node_modules # Evita que los node_modules de tu Windows pisen los del contenedor
+
+volumes:
+  postgres_data:

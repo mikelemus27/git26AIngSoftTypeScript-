@@ -1,0 +1,33 @@
+Vagrant.configure("2") do |config|
+  # 1. Definir la imagen base (un Ubuntu ligero y moderno)
+  config.vm.box = "ubuntu/focal64"
+
+  # 2. Red y Mapeo de Puertos
+  # Redirige el puerto 3000 de la máquina virtual al 3000 de tu Windows
+  config.vm.network "forwarded_port", guest: 3000, host: 3000, host_ip: "127.0.0.1"
+
+  # 3. Sincronización de carpetas
+  # Sincroniza la carpeta de tu proyecto de Windows dentro de /app en la máquina virtual
+  config.vm.synced_folder ".", "/app"
+
+  # 4. Aprovisionamiento (Script de instalación automática)
+  config.vm.provision "shell", inline: <<-SHELL
+    echo "=== Actualizando sistema e instalando Docker ==="
+    sudo apt-get update -y
+    sudo apt-get install -y docker.io docker-compose
+    
+    # Permitir que el usuario vagrant use docker sin sudo
+    sudo usermod -aG docker vagrant
+    
+    echo "=== Entrando a la app y levantando Docker Compose ==="
+    cd /app
+    # Levanta tus contenedores en segundo plano dentro de la máquina virtual
+    sudo docker-compose up -d --build
+  SHELL
+
+  # 5. Configuración de recursos de la máquina virtual
+  config.vm.provider "virtualbox" do |vb|
+    vb.memory = "2048" # 2 GB de RAM
+    vb.cpus = 2        # 2 Núcleos de CPU
+  end
+end
