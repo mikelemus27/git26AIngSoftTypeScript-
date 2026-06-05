@@ -1,9 +1,12 @@
-import { Monedero } from "./core/entities/Monedero"
+import { Monedero } from "./core/entities/Monedero.js" // obligatoria la extension .js
+console.log("... Iniciando Sistema Tec-Café (CLI) ...");
 
 function main() {
-    const objmonedero = new Monedero(
-        { idAlumno: "12345", saldo: 100 }
-    );
+  const Objmonedero = new Monedero(
+    { idAlumno: "12345", saldo: 100 }
+  );
 
-    console.log("Saldo inicial:", objmonedero.saldoActual);
+  console.log("Saldo inicial:", Objmonedero.saldoActual);
 }
+
+main();

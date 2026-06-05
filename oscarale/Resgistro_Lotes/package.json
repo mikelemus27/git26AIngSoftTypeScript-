@@ -1,18 +1,19 @@
 {
-  "name": "resgistro_lotes",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "jest"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
-  "devDependencies": {
-    "@types/jest": "^30.0.0",
-    "jest": "^30.3.0",
-    "ts-jest": "^29.4.6"
-  }
+ "name": "pry-tec-cafe",
+ "version": "1.0.0",
+ "type": "module",
+ "main": "src/main.ts",
+ "scripts": {
+   "exec": "tsx src/main.ts",
+   "dev": "tsx watch src/main.ts",
+    "build": "tsc",
+    "start": "node dist/main.js",
+   "test": "jest"
+ },
+ "devDependencies": {
+     "@types/node": "^22.0.0",
+   "nodemon": "^3.1.14",
+   "tsx": "^4.21.0",
+   "typescript": "^5.9.3"
+ }
 }
